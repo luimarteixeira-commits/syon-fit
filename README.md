@@ -1,8 +1,15 @@
-# SYON FIT
-Aplicativo PWA de treino funcional em casa. Cronômetro guiado, voz via Web Speech API, repetições manuais, histórico e medidas armazenadas localmente.
+# SYON FIT 2.0
 
-## Publicar no GitHub Pages
-Crie um repositório, envie `index.html`, `manifest.webmanifest` e `sw.js` para a raiz. Em Settings > Pages selecione Deploy from a branch, `main` e `/ (root)`. Aguarde o endereço HTTPS publicado. No Safari do iPhone, abra o endereço e use Compartilhar > Adicionar à Tela de Início.
+PWA de treino funcional de 30 minutos (05h20–05h50), com cronômetro, repetições, orientação por voz em português brasileiro, preferência por voz masculina quando disponível e biblioteca de links de busca de vídeos para todos os movimentos.
 
-## Observações
-A voz depende do navegador; o áudio pode exigir interação inicial. O cronômetro pode sofrer restrições quando o navegador fica em segundo plano. Os vídeos são links de pesquisa no YouTube, não aulas verificadas. O histórico permanece no navegador e pode ser exportado. A identidade SYON é apresentada como tipografia estilizada; insira o arquivo original da logo quando disponível.
+## Publicação
+Envie os arquivos **extraídos** para a raiz da branch `main` do repositório GitHub Pages. O arquivo `index.html` deve estar na raiz. O service worker `sw.js` usa novo cache v2.
+
+## Dados
+Os registros existentes em `localStorage` (`syon_history`, `syon_measures`) são preservados quando o aplicativo é atualizado no mesmo domínio e navegador. Faça exportação preventiva em Ajustes. O aplicativo não sincroniza dados entre aparelhos.
+
+## Voz
+A Web Speech API não expõe gênero; o aplicativo tenta priorizar nomes de vozes masculinas `pt-BR` e permite escolha manual. Não há garantia de voz masculina ou neural no iPhone.
+
+## Vídeos
+Os links abrem pesquisas do YouTube, não vídeos incorporados e individualmente verificados. A biblioteca precisa de conexão à internet.
