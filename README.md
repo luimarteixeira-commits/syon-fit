@@ -1,15 +1,15 @@
-# SYON FIT 2.0
+# SYON FIT 3.0
 
-PWA de treino funcional de 30 minutos (05h20–05h50), com cronômetro, repetições, orientação por voz em português brasileiro, preferência por voz masculina quando disponível e biblioteca de links de busca de vídeos para todos os movimentos.
+Aplicativo web instalável de treino funcional. Inclui cronômetro, voz técnica em português, biblioteca de referências no YouTube, cadastro de exercícios, criação de circuitos e reprodutor incorporado do Spotify por link compartilhável.
 
 ## Publicação
-Envie os arquivos **extraídos** para a raiz da branch `main` do repositório GitHub Pages. O arquivo `index.html` deve estar na raiz. O service worker `sw.js` usa novo cache v2.
+
+Envie `index.html`, `manifest.webmanifest`, `sw.js` e `README.md` para a raiz da branch `main` no GitHub Pages. Não envie o ZIP sem extrair.
+
+## Spotify
+
+Em Ajustes, cole um link `https://open.spotify.com/playlist/...` (ou álbum/faixa) e toque em **Salvar player**. O app incorpora o player oficial do Spotify, sujeito a login, disponibilidade e limitações do Spotify e do Safari. Não implementa autenticação OAuth, Spotify Web Playback SDK nem controle remoto da conta. A música pode pausar ao bloquear a tela ou ao trocar de app.
 
 ## Dados
-Os registros existentes em `localStorage` (`syon_history`, `syon_measures`) são preservados quando o aplicativo é atualizado no mesmo domínio e navegador. Faça exportação preventiva em Ajustes. O aplicativo não sincroniza dados entre aparelhos.
 
-## Voz
-A Web Speech API não expõe gênero; o aplicativo tenta priorizar nomes de vozes masculinas `pt-BR` e permite escolha manual. Não há garantia de voz masculina ou neural no iPhone.
-
-## Vídeos
-Os links abrem pesquisas do YouTube, não vídeos incorporados e individualmente verificados. A biblioteca precisa de conexão à internet.
+Histórico e medidas continuam usando as chaves locais `syon_history` e `syon_measures`. Novos treinos usam `syon_plans` e `syon_customExercises`. Faça backup em Ajustes antes de atualizar ou limpar os dados do Safari.
